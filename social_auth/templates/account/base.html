@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <link rel="canonical" href="https://https://demo.themesberg.com/landwind/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock %}Allauth</title>
+
+    <meta name="theme-color" content="#ffffff">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+
+    {% if messages %}
+      <div class="p-2">
+        {% for message in messages %}
+          <div class="text-center border-b">{{message}}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <header class="fixed w-full">
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                        <path fill="#73a1b2" d="M8.802,24.761l11.259-0.511l20.349,0.542L40.282,39.4c0,0-0.019,5.864-5.401,5.934 c-5.382,0.071-18.329,0.15-18.329,0.15s-7.918,0.89-7.894-5.953S8.802,24.761,8.802,24.761z"></path><path fill="#bcbcbc" d="M35.5,20.169l-0.012,0c-0.02-3.229,0.012-6.873,0.012-9.815c0-2.559-0.739-5.175-2.856-6.614 c-1.377-0.936-3.117-1.111-4.777-1.242c-2.28-0.181-4.555,0.096-6.836,0.121c-2.287,0.025-4.437,1.58-5.707,3.482 c-1.364,2.042-1.488,4.641-1.568,7.095c-0.072,2.197-0.143,4.134-0.214,6.285l-0.387-0.012c-2.773,0-4.498,2.249-4.498,5.022H40.41 C40.41,21.717,38.273,20.169,35.5,20.169z M18.547,12.521c0.014-1.066,0.037-2.169,0.489-3.134 c0.611-1.303,1.936-2.159,3.323-2.542c1.387-0.383,2.851-0.356,4.289-0.318c1.311,0.034,2.756,0.131,3.686,1.054 c0.957,0.95,1.041,2.445,1.065,3.793c0.043,2.414,0.052,6.039,0.089,8.67l-12.916-0.405C18.59,17.579,18.521,14.474,18.547,12.521z"></path><path fill="#010101" d="M40.906,23.791c-0.024-2.23-1.931-4.306-3.999-4.353c-0.324-0.007-0.636-0.018-0.958-0.026 c-0.016-1.867,0.001-3.491,0.021-5.189C35.985,12.979,36,11.723,36,10.354c0-3.185-1.092-5.68-3.074-7.027 C31.378,2.275,29.372,2.116,27.907,2c-1.501-0.122-3.015-0.043-4.476,0.029c-0.802,0.041-1.603,0.081-2.404,0.09 c-2.707,0.029-4.936,1.933-6.118,3.704c-1.485,2.225-1.577,5.07-1.651,7.356c-0.039,1.2-0.078,2.15-0.117,3.101 c-0.035,0.858-0.07,1.726-0.106,2.767c-0.238,0.008-0.471,0.007-0.71,0.016c-2.006,0.075-3.992,2.249-4.01,4.388 c-0.013,1.598-0.042,3.352-0.071,5.143c-0.052,3.151-0.105,6.41-0.079,9.143c0.023,2.339,0.165,4.572,1.625,6.193 c1.665,1.849,4.354,2.056,6.807,2.056c0.102,0,0.204,0,0.305-0.001l16.423-0.102c1.475-0.009,3.31-0.021,4.779-0.969 c2.463-1.588,2.772-4.961,2.768-7.722c-0.002-1.632,0.01-3.463,0.023-5.337C40.913,29.097,40.933,26.245,40.906,23.791z M14.141,16.321c0.039-0.952,0.078-1.905,0.117-3.109c0.069-2.159,0.156-4.846,1.483-6.834c1.309-1.959,3.387-3.238,5.297-3.259 c0.814-0.009,1.629-0.05,2.443-0.091c1.43-0.071,2.908-0.145,4.347-0.032c1.755,0.14,3.307,0.323,4.535,1.157 C34.657,5.713,35,8.708,35,10.354c0,1.364-0.015,2.616-0.029,3.857c-0.019,1.62-0.037,3.299-0.021,5.173 c-0.982-0.027-1.956-0.055-2.915-0.086L31.9,11.365c-0.027-1.514-0.144-3.079-1.213-4.139c-1.045-1.038-2.563-1.162-4.025-1.2 c-1.377-0.037-2.936-0.078-4.436,0.336c-1.697,0.469-3.025,1.493-3.644,2.813c-0.505,1.078-0.521,2.279-0.536,3.339 c-0.014,1.026-0.009,2.253-0.003,3.48c0.004,1.037,0.008,2.065,0.001,2.978c-1.325-0.001-2.664,0.019-4.008,0.052 C14.071,18.012,14.106,17.161,14.141,16.321z M19.044,15.989c-0.005-1.221-0.011-2.441,0.003-3.462 c0.013-0.959,0.028-2.045,0.442-2.929c0.493-1.054,1.588-1.882,3.003-2.271c1.356-0.374,2.835-0.337,4.144-0.301 c1.263,0.033,2.562,0.13,3.348,0.91c0.804,0.797,0.893,2.085,0.917,3.446l0.133,7.885c-0.438-0.014-0.883-0.028-1.318-0.043 c-3.629-0.122-7.139-0.227-10.67-0.248C19.052,18.06,19.049,17.029,19.044,15.989z M9.315,23.458 c0.013-1.596,1.579-3.341,3.047-3.396c1.889-0.071,3.744-0.101,5.592-0.101c3.889,0,7.734,0.129,11.729,0.262 c2.341,0.078,4.729,0.158,7.201,0.215c1.535,0.035,3.004,1.67,3.022,3.363c0.001,0.116,0.001,0.243,0.002,0.36 c-1.424-0.042-2.929-0.068-4.444-0.092c-1.662-0.027-3.324-0.054-4.868-0.104l-7.03-0.223c-2.312-0.076-4.694,0.039-6.996,0.148 c-2.533,0.121-4.93,0.228-7.26,0.117C9.312,23.826,9.314,23.638,9.315,23.458z M39.895,31.848 c-0.014,1.877-0.025,3.711-0.023,5.346c0.005,2.662-0.266,5.562-2.311,6.88c-1.225,0.79-2.897,0.8-4.242,0.809l-16.423,0.102 c-2.422,0.015-4.906-0.106-6.363-1.725c-1.226-1.36-1.346-3.394-1.367-5.533c-0.026-2.72,0.027-5.972,0.079-9.116 c0.02-1.232,0.04-2.442,0.055-3.6c2.378,0.109,4.886-0.003,7.318-0.117c2.282-0.107,4.64-0.222,6.918-0.147l7.03,0.223 c1.549,0.05,3.216,0.076,4.883,0.104c1.523,0.024,3.036,0.051,4.467,0.093C39.924,27.276,39.91,29.587,39.895,31.848z"></path><path fill="#010101" d="M16.97,35.082c-0.585-0.331-1-0.864-1.505-1.294c0.102-0.073,0.2-0.153,0.303-0.225 c0.185-0.128,0.701-0.532,0.784-0.539c0.636-0.056,0.642-1.056,0-1c-0.548,0.048-1.101,0.451-1.59,0.849 c-0.002-0.223-0.004-0.446-0.021-0.671c-0.049-0.638-1.049-0.643-1,0c0.017,0.224,0.019,0.447,0.023,0.67 c-0.46-0.239-0.917-0.482-1.342-0.809c-0.51-0.392-1.009,0.476-0.505,0.863c0.5,0.384,1.051,0.651,1.594,0.934 c-0.614,0.477-1.236,1.005-1.63,1.629c-0.344,0.546,0.521,1.048,0.864,0.505c0.256-0.407,0.664-0.77,1.078-1.103 c0.033,0.355,0.084,0.71,0.186,1.065c0.044,0.153,0.182,0.323,0.349,0.349c0.033,0.005,0.067,0.01,0.1,0.015 c0.548,0.085,0.823-0.634,0.467-0.886c-0.055-0.248-0.101-0.497-0.122-0.744c0.481,0.425,0.887,0.929,1.462,1.255 C17.026,36.262,17.531,35.399,16.97,35.082z"></path><path fill="#010101" d="M23.835,35.278c-0.298-0.173-0.464-0.49-0.711-0.722c-0.259-0.242-0.565-0.429-0.862-0.624 c0.493-0.347,0.997-0.68,1.514-0.987c0.553-0.328,0.051-1.193-0.505-0.863c-0.451,0.267-0.894,0.555-1.331,0.853 c0.006-0.159,0.005-0.318,0.013-0.477c0.032-0.643-0.968-0.642-1,0c-0.008,0.166-0.005,0.332-0.011,0.498 c-0.341-0.277-0.674-0.564-0.999-0.862c-0.473-0.435-1.182,0.27-0.707,0.707c0.437,0.402,0.893,0.779,1.36,1.144 c-0.524,0.429-1.03,0.878-1.488,1.372c-0.438,0.471,0.268,1.18,0.707,0.707c0.339-0.365,0.705-0.704,1.081-1.031 c-0.007,0.332,0.003,0.671,0.106,0.939c0.073,0.189,0.252,0.391,0.482,0.367c0.013-0.001,0.026-0.003,0.038-0.004 c0.217-0.022,0.425-0.139,0.482-0.367c0.003-0.01,0.005-0.021,0.008-0.031c0.042-0.169-0.002-0.309-0.086-0.415 c-0.038-0.185-0.054-0.391-0.049-0.609c0.252,0.167,0.499,0.342,0.706,0.562c0.255,0.271,0.416,0.516,0.745,0.707 C23.888,36.465,24.392,35.601,23.835,35.278z"></path><path fill="#010101" d="M30.368,32.101c-0.505,0.26-0.985,0.558-1.452,0.872c0.001-0.214-0.013-0.426-0.004-0.64 c0.026-0.643-0.974-0.642-1,0c-0.008,0.204,0.008,0.406,0.007,0.609c-0.355-0.265-0.699-0.545-1.01-0.866 c-0.449-0.463-1.156,0.245-0.707,0.707c0.428,0.44,0.93,0.801,1.442,1.152c-0.503,0.423-0.987,0.87-1.433,1.361 c-0.432,0.475,0.273,1.185,0.707,0.707c0.349-0.385,0.722-0.739,1.106-1.078c0.036,0.332,0.059,0.663,0.112,0.995 c0.101,0.634,1.065,0.365,0.964-0.266c-0.038-0.24-0.05-0.482-0.077-0.723c0.364,0.299,0.702,0.626,0.976,1.019 c0.366,0.524,1.233,0.025,0.863-0.505c-0.43-0.616-0.981-1.084-1.564-1.515c0.503-0.35,1.023-0.678,1.576-0.964 C31.445,32.669,30.94,31.806,30.368,32.101z"></path><path fill="#010101" d="M36.276,34.034c0.427-0.347,0.848-0.701,1.275-1.048c0.5-0.406-0.211-1.109-0.707-0.707 c-0.356,0.289-0.706,0.584-1.062,0.873c0.007-0.161,0.004-0.323,0.015-0.484c0.046-0.642-0.954-0.639-1,0 c-0.005,0.076-0.003,0.153-0.007,0.229c-0.32-0.245-0.64-0.49-0.961-0.736c-0.511-0.391-1.009,0.477-0.505,0.864 c0.451,0.345,0.902,0.691,1.352,1.036c-0.502,0.412-1.011,0.816-1.505,1.237c-0.49,0.418,0.22,1.123,0.707,0.707 c0.312-0.266,0.634-0.519,0.949-0.78c0.002,0.022,0.001,0.044,0.004,0.065c0.058,0.524,0.302,1,0.916,0.846 c0.504-0.127,0.423-0.771,0.046-0.935c0.011-0.067,0.009-0.189,0.002-0.297c0.377,0.285,0.735,0.592,0.973,0.997 c0.326,0.554,1.191,0.052,0.863-0.505C37.295,34.82,36.794,34.429,36.276,34.034z"></path>
+                    </svg>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Django Social Auth</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <div class="hidden mt-2 mr-4 sm:inline-block">
+                        <a class="github-button" href="https://github.com/Joshyvibe/recaptcha-system-django" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Joshyvibe/recaptcha-system-django">Star</a>
+                    </div>
+                    <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
+
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                       
+                        {% if request.user.is_authenticated %}
+                            <li>
+                                <a href="{% url 'home' %}" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'account_email' %}" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Change-Email</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'account_logout' %}" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Signout</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'account_login' %}" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'account_signup' %}" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Signup</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+   
+    <main>
+        {% block content %}
+        {% endblock %}
+        {% endblock %}
+        {% block extra_body %}
+        {% endblock %}
+    </main>
+   
+    
+    <footer class="bg-white dark:bg-gray-800">
+        <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Discord Server</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Twitter</a>
+                        </li>
+                        <li class="mb-4">
+                         <a href="#" class="hover:underline">Facebook</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Licensing</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">iOS</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Android</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Windows</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">MacOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
+                        <linearGradient id="Tz2XUOsfxgFw8DN_AXgE5a_44033_gr1" x1="36" x2="36" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5a_44033_gr1)" d="M36 40A2 2 0 1 0 36 44A2 2 0 1 0 36 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5b_44033_gr2" x1="42" x2="42" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5b_44033_gr2)" d="M42 40A2 2 0 1 0 42 44A2 2 0 1 0 42 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5c_44033_gr3" x1="48" x2="48" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5c_44033_gr3)" d="M48 40A2 2 0 1 0 48 44A2 2 0 1 0 48 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5d_44033_gr4" x1="30" x2="30" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5d_44033_gr4)" d="M30 40A2 2 0 1 0 30 44A2 2 0 1 0 30 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5e_44033_gr5" x1="32" x2="32" y1="5.333" y2="58.804" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5e_44033_gr5)" d="M52.021,34H47v-3c0-2.757-2.243-5-5-5h-1v-2c0-1.103-0.897-2-2-2h-2v-7c0-4.963-4.037-9-9-9 s-9,4.037-9,9v7h-2c-1.103,0-2,0.897-2,2v2h-1c-2.757,0-5,2.243-5,5v22c0,2.757,2.243,5,5,5h28c2.757,0,5-2.243,5-5v-3h5.021 C53.663,50,55,48.663,55,47.021V36.979C55,35.337,53.663,34,52.021,34z M39,26h-6v-2h6V26z M21,15c0-3.859,3.141-7,7-7s7,3.141,7,7 v7h-2c-1.103,0-2,0.897-2,2v2h-6v-2c0-1.103-0.897-2-2-2h-2V15z M17,24h6v2h-6V24z M45,53c0,1.654-1.346,3-3,3h-7 c0-1.103-0.897-2-2-2H23c-1.103,0-2,0.897-2,2h-7c-1.654,0-3-1.346-3-3v-4h4v-2h-4v-2h4v-2h-4v-2h4v-2h-4v-2h4v-2h-4v-4 c0-1.654,1.346-3,3-3h28c1.654,0,3,1.346,3,3v3H25.979C24.337,34,23,35.337,23,36.979v10.041C23,48.663,24.337,50,25.979,50H45V53z M53,47.021C53,47.561,52.561,48,52.021,48H25.979C25.439,48,25,47.561,25,47.021V36.979C25,36.439,25.439,36,25.979,36h26.041 C52.561,36,53,36.439,53,36.979V47.021z"></path>
+                    </svg>
+                    Django Socail Auth
+                </a>
+                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2023-2024 Allforms™. All Rights Reserved. Built with <a href="https://flowbite.com" class="text-purple-600 hover:underline dark:text-purple-500">Flowbite</a> and <a href="https://tailwindcss.com" class="text-purple-600 hover:underline dark:text-purple-500">Tailwind CSS</a>.
+                </span>
+                <ul class="flex justify-center mt-5 space-x-5">
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+</body>
+</html>

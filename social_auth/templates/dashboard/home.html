@@ -1,0 +1,27 @@
+{% extends 'account/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- Start block -->
+    <section class="bg-white dark:bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">Hello {{ user.first_name }}!<br>{% if request.user.is_authenticated %}Your Username is: {{ user }}{% else %}Welcome{% endif %}</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">This free and open-source password reset in Django template was built using the utility classes from <a href="https://tailwindcss.com" class="hover:underline">Tailwind CSS</a> and based on the components from the <a href="https://flowbite.com/docs/getting-started/introduction/" class="hover:underline">Flowbite Library</a> and the <a href="https://flowbite.com/blocks/" class="hover:underline">Blocks System</a>.</p>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 text-xl dark:text-gray-400">Go to <a href="{% url 'socialaccount_connections' %}" class="hover:underline">Settings</a>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500" height="200" viewBox="0 0 64 64">
+                    <linearGradient id="Tz2XUOsfxgFw8DN_AXgE5a_44033_gr1" x1="36" x2="36" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5a_44033_gr1)" d="M36 40A2 2 0 1 0 36 44A2 2 0 1 0 36 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5b_44033_gr2" x1="42" x2="42" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5b_44033_gr2)" d="M42 40A2 2 0 1 0 42 44A2 2 0 1 0 42 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5c_44033_gr3" x1="48" x2="48" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5c_44033_gr3)" d="M48 40A2 2 0 1 0 48 44A2 2 0 1 0 48 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5d_44033_gr4" x1="30" x2="30" y1="39.833" y2="44.179" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5d_44033_gr4)" d="M30 40A2 2 0 1 0 30 44A2 2 0 1 0 30 40Z"></path><linearGradient id="Tz2XUOsfxgFw8DN_AXgE5e_44033_gr5" x1="32" x2="32" y1="5.333" y2="58.804" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#Tz2XUOsfxgFw8DN_AXgE5e_44033_gr5)" d="M52.021,34H47v-3c0-2.757-2.243-5-5-5h-1v-2c0-1.103-0.897-2-2-2h-2v-7c0-4.963-4.037-9-9-9 s-9,4.037-9,9v7h-2c-1.103,0-2,0.897-2,2v2h-1c-2.757,0-5,2.243-5,5v22c0,2.757,2.243,5,5,5h28c2.757,0,5-2.243,5-5v-3h5.021 C53.663,50,55,48.663,55,47.021V36.979C55,35.337,53.663,34,52.021,34z M39,26h-6v-2h6V26z M21,15c0-3.859,3.141-7,7-7s7,3.141,7,7 v7h-2c-1.103,0-2,0.897-2,2v2h-6v-2c0-1.103-0.897-2-2-2h-2V15z M17,24h6v2h-6V24z M45,53c0,1.654-1.346,3-3,3h-7 c0-1.103-0.897-2-2-2H23c-1.103,0-2,0.897-2,2h-7c-1.654,0-3-1.346-3-3v-4h4v-2h-4v-2h4v-2h-4v-2h4v-2h-4v-2h4v-2h-4v-4 c0-1.654,1.346-3,3-3h28c1.654,0,3,1.346,3,3v3H25.979C24.337,34,23,35.337,23,36.979v10.041C23,48.663,24.337,50,25.979,50H45V53z M53,47.021C53,47.561,52.561,48,52.021,48H25.979C25.439,48,25,47.561,25,47.021V36.979C25,36.439,25.439,36,25.979,36h26.041 C52.561,36,53,36.439,53,36.979V47.021z"></path>
+                </svg>
+            </div>                
+        </div>
+    </section>
+    <!-- End block -->
+   
+   
+{% endblock %}

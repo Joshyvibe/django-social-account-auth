@@ -1,0 +1,52 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="container px-6 py-24 mx-auto lg:py-32">
+            <div class="lg:flex">
+                <div class="lg:w-1/2">                                   
+                    <h1 class="mt-4 text-2xl font-medium text-gray-800 capitalize lg:text-3xl dark:text-white">
+                        {% trans "Sign Out" %}
+                    </h1>
+                    <p class="text-white rounded-xl mt-2">{% trans 'Are you sure you want to sign out?' %}</p>
+
+                    
+                </div>
+                
+
+                <div class="mt-8 lg:w-1/2 lg:mt-0">
+                    <form class="w-full lg:max-w-xl" method="post"  action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        
+                       
+                        
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+
+                        
+
+                        <div class="mt-8 md:flex md:items-center">
+                            <button type="submit" class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg md:w-1/2 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                {% trans "Sign Out" %}
+                            </button>
+
+                
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

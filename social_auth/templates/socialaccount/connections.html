@@ -1,0 +1,73 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Account Connections" %}{% endblock %}
+
+{% block content %}
+
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="container px-6 py-24 mx-auto lg:py-32">
+            <div class="lg:flex">
+                <div class="lg:w-1/2">                    
+                    <h1 class="mt-4 text-2xl font-medium text-gray-800 capitalize lg:text-3xl dark:text-white">
+                        {% trans "Account Connections" %}
+                    </h1>
+                    {% if form.accounts %}
+                    <p class="text-white rounded-xl mt-2">{% blocktrans %}You can sign into your account, using any of the third party account shown.{% endblocktrans %}</p>
+
+                    
+                </div>
+                
+
+                <div class="mt-8 lg:w-1/2 lg:mt-0">
+                    <form class="w-full lg:max-w-xl" method="post"  action="{% url 'socialaccount_connections' %}">
+                        {% csrf_token %}
+                        <fieldset>
+                            {% if form.non_field_errors %}
+                                <div class="p-6 bg-red-500 text-white rounded-xl m-2">
+                                    <p class="p-2">{{ form.non_field_errors }}</p>
+                                </div>
+                            {% endif %}
+                            {% for base_account in form.accounts %}
+                            {% with base_account.get_provider_account as account %}
+                            <div>
+                                <label for="id_account_{{ base_account.id }}" class="{% if emailaddress.primary %}primary_email{%endif%}block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                                <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>     
+                                <span>{{account.get_brand.name}}</span>
+                                -> {{ account }}
+                                </label>
+                            </div>
+                            {% endwith %}
+                            {% endfor %}
+                            <div class="mt-8 md:flex md:items-center">
+                                
+                                <button type="submit" name="action_remove" class="w-full m-2 px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg md:w-1/2 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                    {% trans "Remove" %}
+                                </button>
+    
+                    
+                            </div>
+                        </fieldset>
+                    </form>
+                    {% else %}
+                    <p>{% trans "You don't have any social network accounts linked to this account." %}</p>
+                    {% endif %}
+                    <hr>
+                   
+                    <h3 class="mt-4 text-2xl font-medium text-gray-800 capitalize lg:text-3xl dark:text-white">
+                        {% trans "Add a 3rd party account" %}
+                    </h3>
+                    <div>
+                        {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
+                    </div>
+                    {% include "socialaccount/snippets/login_extra.html" %}
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
+
