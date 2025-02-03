@@ -1,4 +1,3 @@
-
 In this repository, you would get information on how to implement social account authentication 
 using the django allauth library in a django project. 
 
